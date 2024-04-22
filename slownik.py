@@ -3,20 +3,18 @@ import random
 with open('data.txt', encoding="utf-8") as path:
     data = path.read().splitlines()
 
-
-
-#przyklad dzialania funkcji tworzacej liste ze slownikiem
-print(f"krok 1: {data}")
-raw_descriptors = data[0].split(", ")
-print(f"krok 2: {raw_descriptors}")
-descriptors = []
-for descriptor in raw_descriptors:
-    slowa = descriptor.split()
-    if len(slowa) == 2:
-        descriptor = {"m": slowa[0], "d": slowa[1]}
-        descriptors.append(descriptor)
-print(f"krok 3: {descriptors}")
-#koniec przykladu
+# #przyklad dzialania funkcji tworzacej liste ze slownikiem
+# print(f"krok 1: {data}")
+# raw_descriptors = data[0].split(", ")
+# print(f"krok 2: {raw_descriptors}")
+# descriptors = []
+# for descriptor in raw_descriptors:
+#     slowa = descriptor.split()
+#     if len(slowa) == 2:
+#         descriptor = {"m": slowa[0], "d": slowa[1]}
+#         descriptors.append(descriptor)
+# print(f"krok 3: {descriptors}")
+# #koniec przykladu
 
 raw_descriptors = data[0].split(", ")
 descriptors = []
@@ -42,6 +40,12 @@ for origin in raw_origins:
         origin = {"m": slowa[0], "d": slowa[1]}
         origins.append(origin)
 
+#rzut kością
+def roll(min=1, max=6):
+    roll_result = random.randint(min, max)
+    return roll_result
+
+#generowanie losowej nazwy przeciwnika
 def random_enemy_name():
     descriptors_len = len(descriptors) -1
     enemies_len = len(enemies) -1
@@ -54,20 +58,38 @@ def random_enemy_name():
     enemy_m = descriptors[descriptor_choice]["m"] + " " + enemies[enemy_choice]["m"] + " " + origins[origin_choice]["m"]
     enemy_d = descriptors[descriptor_choice]["d"] + " " + enemies[enemy_choice]["d"] + " " + origins[origin_choice]["d"]
     
-    #wyswietla wygenerowane nazwy w zdaniu
-    print(f"\nStoi przed Tobą {enemy_m}. \nAtakujesz {enemy_d}!")
-    
     #zwraca wynik w formie listy (mianownik, dopelniacz)
     enemy_name = [enemy_m, enemy_d]
     return enemy_name
 
-for i in range(5):
-    random_enemy_name()
+#klasa Charcter do tworzenia instancji przeciwników
+class Character:
+    def __init__ (self, name_m, name_d, hp, max_damage, defence, speed):
+        self.name_m = name_m
+        self.name_d = name_d
+        self.hp = hp
+        self.max_damage = max_damage
+        self.defence = defence
+        self.speed = speed
+    def przedstaw(self):
+        print(f"Na arenę wkracza {self.name_m}...")
+        print(f"M: {self.name_m.title()} \nD: {self.name_d.title()} \nHP:  {self.hp} \nDMG: {self.max_damage} \nDEF: {self.defence} \nSPD: {self.speed}")
 
 
-enemy_name = random_enemy_name()
-print(enemy_name[0])
-print(enemy_name[1])
+def tworz_przeciwnika(enemy_modifier=1):
+    enemy_name = random_enemy_name()
+    enemy = Character(enemy_name[0], enemy_name[1], roll(8, 12) + enemy_modifier, roll(2,8) + enemy_modifier, roll(2,8) + enemy_modifier, roll())
+    return enemy
+
+x = 1
+z = 1
+while x < 11:
+    name = "poziom" + str(x)
+    print(f"\nPrzeciwnik nr {x}:")
+    name = tworz_przeciwnika(z)
+    name.przedstaw()
+    x += 1
+    z += 10
 
 
 
