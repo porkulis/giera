@@ -1,5 +1,5 @@
 import random
-
+import time
 with open('data.txt', encoding="utf-8") as path:
     data = path.read().splitlines()
 
@@ -39,6 +39,13 @@ for origin in raw_origins:
     if len(slowa) == 2:
         origin = {"m": slowa[0], "d": slowa[1]}
         origins.append(origin)
+
+#wyświetl kropki
+def wait(x):
+    while x > 0:
+        print(".")
+        time.sleep(1)
+        x -= 1
 
 #rzut kością
 def roll(min=1, max=6):
