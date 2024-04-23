@@ -79,7 +79,7 @@ class Character:
         self.defence = defence
         self.speed = speed
     def przedstaw(self):
-        print(f"Na arenę wkracza {self.name_m}...\nHP:  {self.hp} \nDMG: {self.max_damage} \nDEF: {self.defence} \nSPD: {self.speed}")
+        print(f"Na arenę wkracza: \n{self.name_m.title()}\nHP:  {self.hp} \nDMG: {self.max_damage} \nDEF: {self.defence} \nSPD: {self.speed}")
         #print(f"M: {self.name_m.title()} \nD: {self.name_d.title()} \nHP:  {self.hp} \nDMG: {self.max_damage} \nDEF: {self.defence} \nSPD: {self.speed}")
 
 
