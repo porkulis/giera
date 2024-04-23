@@ -14,7 +14,7 @@ print('''
           /__________)                                (_________\\
 ''')
 
-player = Character("Gracz", "gracza", 100, 10, 10, 5)
+player = Character("Gracz", "gracza", 100, 5, 8, 5)
 
 player.przedstaw()
 
@@ -24,17 +24,18 @@ z = 1
 ilosc_zwyciestw = 0
 pokonani_wrogowie = []
 
-wait(3)
+wait(2)
 
 while True:
+    input(f"Walka nr {x}.\nMasz {player.hp} pkt. życia. \nCzy jestes gotowy? (Wcisnij ENTER)")
     name = "poziom" + str(x)
-    print(f"Przeciwnik nr {x}:")
+    print(f"\nPrzeciwnik nr {x}:")
     enemy = tworz_przeciwnika(z)
     enemy.przedstaw()
     z += 2
-    input(f"\nWalka nr {x}. Czy jestes gotowy? (Wcisnij ENTER)")
     x += 1
     runda = 1
+    input(f"\nCzy chcesz zaatakować {enemy.name_d}? (Wcisnij ENTER)")
     while True:
         gracz_inicjatywa = 1
         enemy_inicjatywa = 1
@@ -55,7 +56,8 @@ while True:
                 ilosc_zwyciestw += 1
                 pokonani_wrogowie.append(enemy.name_m.title())
                 print("\nZwyciestwo!")
-                wait(3)
+                print(f"Zostało Ci {player.hp} pkt. życia.")
+                wait(2)
                 break
             time.sleep(3)
             atak = enemy.max_damage * roll(1,6)
@@ -70,7 +72,7 @@ while True:
         else:
             print(f"\n------ Runda {runda} ------")
             time.sleep(1)
-            print(f"enemy atakuje pierwszy.")
+            print(f"Przeciwnik atakuje pierwszy.")
             runda += 1
             atak = enemy.max_damage * roll(1,6)
             player.hp -= atak
@@ -89,7 +91,8 @@ while True:
                 ilosc_zwyciestw += 1
                 pokonani_wrogowie.append(enemy.name_m.title())
                 print("\nZwyciestwo!")
-                wait(3)
+                print(f"Zostało Ci {player.hp} pkt. życia.")
+                wait(2)
                 break
             time.sleep(3)
 
