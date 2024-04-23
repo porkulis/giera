@@ -1,5 +1,5 @@
-from slownik import Character
-from slownik import tworz_przeciwnika
+from class_Character import Character
+from class_Character import tworz_przeciwnika
 
 player = Character("Gracz", "gracza", 50, 10, 10, 5)
 
