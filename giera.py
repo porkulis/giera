@@ -19,12 +19,13 @@ print('''
 imie = str(input("Podaj swoje imię: "))
 
 options = input("Podaj szybkość walki 1, 2, 3): ")
+
 if options == 1:
-    fight_speed = 1
+    fight_speed = 3
 elif options == 2:
     fight_speed = 2
 elif options == 3:
-    fight_speed = 3
+    fight_speed = 1
 else:
     fight_speed = 2
 print(f"Prędkość walki: {fight_speed}")
@@ -54,11 +55,11 @@ while True:
     enemy.przedstaw()
     z += 2
     runda = 1
-    time.sleep(1)
+    #time.sleep(1)
     input(f"\nMasz {player.hp} pkt. życia. \nCzy jestes gotowy by zaatakować {enemy.name_d}? (Wcisnij ENTER)")
 
     clear()
-    print(f"Starcie nr {x}: {player.name_m} vs {enemy.name_m}!")
+    print(f"Starcie nr {x}: {player.name_m} vs {enemy.name_m.title()}!")
 
     x += 1
     while True:
@@ -81,6 +82,7 @@ while True:
             if enemy.hp < 1:
                 ilosc_zwyciestw += 1
                 pokonani_wrogowie.append(enemy.name_m.title())
+                time.sleep(fight_speed)
                 print("\nZwyciestwo!")
                 time.sleep(fight_speed)
                 input(f"\nMasz {player.hp} pkt. życia. \nCzy jestes gotowy by kontynuować? (Wcisnij ENTER)")
@@ -93,6 +95,7 @@ while True:
             print(f"Życie gracza: {player.hp}")
             if player.hp < 1:
                 player.hp = 0
+                time.sleep(fight_speed)
                 print("\nPorazka!")
                 break
             time.sleep(fight_speed)
@@ -107,18 +110,21 @@ while True:
             print(f"\n{enemy.name_m.title()} atakuje Cie i zadaje {atak} pkt. obrażeń!")
             print(f"Życie gracza: {player.hp}")
             if player.hp < 1:
+                time.sleep(fight_speed)
                 print("\nPorazka!")
                 break
             time.sleep(fight_speed)
             atak = player.max_damage * roll(1,6)
             enemy.hp -= atak
             print(f"\nAtakujesz {enemy.name_d} i zadajesz {atak} pkt. obrażeń!")
-            print(f"Życie {enemy.name_m}: {enemy.hp}")
+            print(f"Życie {enemy.name_d}: {enemy.hp}")
             if enemy.hp < 1:
                 enemy.hp = 0
                 ilosc_zwyciestw += 1
                 pokonani_wrogowie.append(enemy.name_m.title())
+                time.sleep(fight_speed)
                 print("\nZwyciestwo!")
+                time.sleep(fight_speed)
                 input(f"\nMasz {player.hp} pkt. życia. \nCzy jestes gotowy by kontynuować? (Wcisnij ENTER)")
                 clear()
                 break
@@ -127,5 +133,7 @@ while True:
     if player.hp < 1:
         print(f"Pokonał Cie {enemy.name_m.title()}!")
         print(f"\nPokonani wrogowie: {ilosc_zwyciestw} ({", ".join(pokonani_wrogowie)})")
+        wait(3)
         print("\nGAME OVER")
+        wait(3)
         break
