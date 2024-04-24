@@ -79,13 +79,15 @@ class Character:
         self.defence = defence
         self.speed = speed
     def przedstaw(self):
-        print(f"Na arenę wkracza: \n{self.name_m.title()}\nHP:  {self.hp} \nDMG: {self.max_damage} \nDEF: {self.defence} \nSPD: {self.speed}")
+        print(f"Na arenę wkracza: ")
+        time.sleep(1)
+        print(f"\n{self.name_m.title()}! (HP: {self.hp}, DMG: {self.max_damage}, SPD: {self.speed})")
         #print(f"M: {self.name_m.title()} \nD: {self.name_d.title()} \nHP:  {self.hp} \nDMG: {self.max_damage} \nDEF: {self.defence} \nSPD: {self.speed}")
 
 
 def tworz_przeciwnika(enemy_modifier=1):
     enemy_name = random_enemy_name()
-    enemy = Character(enemy_name[0], enemy_name[1], 2 * roll(8, 12) + enemy_modifier, 2 * roll(2,4) + enemy_modifier, 2 * roll(2,4) + enemy_modifier, roll())
+    enemy = Character(enemy_name[0], enemy_name[1], 2 * roll(8, 12) + enemy_modifier, roll(1,4) + enemy_modifier, 10 + enemy_modifier, roll(1,6))
     return enemy
 
 
