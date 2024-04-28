@@ -24,7 +24,7 @@ fight_speed = 2
 print(f"\nPrędkość walki: {fight_speed}")
 
 
-player = Character(imie.title(), "gracza", 100, 5, 8, 5)
+player = Character(imie.title(), "gracza", "m", 100, 5, 8, 5)
 
 print(f"\nJesteś znany jako {imie.title()} z Magicznego Zagajnika.")
 time.sleep(1)
@@ -56,6 +56,7 @@ while True:
     print(f"Starcie nr {x}: {player.name_m} (HP: {player.hp} DMG: {player.max_damage}) vs {enemy.name_m.title()} (HP: {enemy.hp} DMG: {enemy.max_damage})")
 
     x += 1
+    z += 1
 
     #ustawienie losowego ataku dla calej walki
     #attack_roll = roll(0,3)
