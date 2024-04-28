@@ -2,6 +2,7 @@ from class_Character import Character
 from class_Character import tworz_przeciwnika
 from class_Character import roll
 from class_Character import wait
+from druki import loading_enemy
 import time
 import os
 clear = lambda: os.system('cls')
@@ -43,6 +44,7 @@ while True:
     clear()
     name = "poziom" + str(x)
     enemy = tworz_przeciwnika(z)
+    loading_enemy(3 , 0.03)
     enemy.przedstaw()
     z += 2
     runda = 1
