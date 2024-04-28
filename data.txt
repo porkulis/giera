@@ -1,3 +1,12 @@
 wątły wątłego, silny silnego, elitarny elitarnego
 gremlin gremlina, golem golema, tytan tytana, gnoll gnolla, jaszczuroczłek jaszczuroczłeka, demigorgon demigorgona, chochlik chochlika, magog magoga, demon demona
 pustynny pustynnego, leśny leśnego, górski górskiego, szponiasty szponiastego, szablozębny szablozębnego, grzywiasty grzywiastego
+
+pikinier pikiniera m, centaur centaura m, gremlin gremlina m, chochlik chochlika m, szkielet szkieleta m, troglodyta troglodyte m, goblin goblina m, gnoll gnolla m
+łucznik łucznika m, krasnolud krasnoluda m, gargulec gargulca m, gog goga m, zombie zombie m, harpia harpię f, wilczek wilczka m, jaszczuroczłek jaszczuroczłeka m
+gryf gryfa m, elf elfa m, golem golema m, cerber cerbera m, zjawa zjawę f, oko oko m, ork orka m, ważka ważkę f
+krzyżowiec krzyżowca m, pegaz pegaza m, mag maga m, demon demona m, wampir wampira m, meduza meduzę f, ogr ogra m, bazyliszek bazyliszka m
+mnich mnicha m, drzewiec drzewca m, dżin dżina m, Pit-Lord Pit-Lorda m, lisz lisza m, minotaur minotaura m, ptak-gromu ptaka-gromu m, gorgona gorgonę f
+czempion czempiona m, jednorożec jednorożca m, naga nagę f, ifryt ifryta m, mroczny-rycerz mrocznego-rycerza m, kiełbaska kiełbaskę f, cyklop cyklopa m, wiwerna wiwernę f
+anioł anioła m, zielony-smok zielonego-smoka m, gigant giganta m, dziabeł diabła m, smok-cienia smoka-cienia m, czerwony-smok czerwonego-smoka m, behemot behemota m, hudra hydrę f
+
