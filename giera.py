@@ -3,6 +3,7 @@ from class_Character import tworz_przeciwnika
 from class_Character import roll
 from class_Character import wait
 from druki import loading_enemy
+from druki import print_with_effect
 import time
 import os
 clear = lambda: os.system('cls')
@@ -31,7 +32,7 @@ print("Trudnisz się wojaczką.")
 time.sleep(1)
 print("Podczas swoich podróży natrafiasz na Arenę Walk znaną w Krainach jako: ")
 time.sleep(1)
-print("\nARENA ŚMIERCI IV!")
+print_with_effect("Arena Śmierci IV")
 time.sleep(1)
 input(f"\nCzy decydujesz się wkroczyć na Arenę Śmierci? (Wcisnij ENTER)")
 
@@ -83,7 +84,7 @@ while True:
                 print(f"\n[ATAK GRACZA]") 
                 time.sleep(fight_speed)
                 if atak == player.max_damage*3:
-                    print("    BLOOD RAPAGE!")
+                    print("    BLOOD RAMPAGE!")
                     atak = atak*3
                     time.sleep(fight_speed)
                 print(f"    Atakujesz {enemy.name_d} i zadajesz {atak} pkt. obrażeń!")
@@ -114,7 +115,7 @@ while True:
                 if atak == enemy.max_damage*3:
                     print("    MAX DAMAGE!")
                     time.sleep(fight_speed)
-                print(f"    {enemy.name_m.title()} atakuje Cie i zadaje {atak} pkt. obrażeń!")
+                print(f"    {enemy.name_m.title()} atakuje Cię i zadaje {atak} pkt. obrażeń!")
                 player.hp -= atak
                 time.sleep(1)
                 print(f"    Życie gracza: {player.hp}")
@@ -145,7 +146,7 @@ while True:
                 if atak == enemy.max_damage*3:
                     print("    MAX DAMAGE!")
                     time.sleep(fight_speed)
-                print(f"    {enemy.name_m.title()} atakuje Cie i zadaje {atak} pkt. obrażeń!")
+                print(f"    {enemy.name_m.title()} atakuje Cię i zadaje {atak} pkt. obrażeń!")
                 player.hp -= atak
                 time.sleep(1)
                 print(f"    Życie gracza: {player.hp}")
@@ -166,7 +167,7 @@ while True:
                 print(f"\n[ATAK GRACZA]")
                 time.sleep(fight_speed)
                 if atak == player.max_damage*3:
-                    print("    BLOOD RAPAGE!")
+                    print("    BLOOD RAMPAGE!")
                     atak = atak*3
                     time.sleep(fight_speed)
                 print(f"    Atakujesz {enemy.name_d} i zadajesz {atak} pkt. obrażeń!")
@@ -194,32 +195,7 @@ while True:
             print(f"\nGratulacje, {imie.title()}! Pokonani przeciwnicy: {ilosc_zwyciestw}!")
 
         time.sleep(5)
-        clear()
-        print("G")
-        time.sleep(1)
-        clear()
-        print("A")
-        time.sleep(1)
-        clear()
-        print("M")
-        time.sleep(1)
-        clear()
-        print("E")
-        time.sleep(1)
-        clear()
-        print("O")
-        time.sleep(1)
-        clear()
-        print("V")
-        time.sleep(1)
-        clear()
-        print("E")
-        time.sleep(1)
-        clear()
-        print("R")
-        time.sleep(1)
-        clear()
-        print("GAME OVER")
+        print_with_effect("GAME OVER")
         time.sleep(1)
         print(f"Pokonani wrogowie to: {", ".join(pokonani_wrogowie)}!")
         break
