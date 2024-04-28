@@ -188,7 +188,7 @@ while True:
             time.sleep(fight_speed)
 
     if player.hp < 1:
-        print(f"Pokonał Cie {enemy.name_m.title()}!")
+        print(f"Pokonał Cię {enemy.name_m.title()}!")
         if ilosc_zwyciestw < 1:
             print(f"\n{imie.title()}, nie udało Ci sie pokonać ani jednego przeciwnika.")
         else:
@@ -197,5 +197,7 @@ while True:
         time.sleep(5)
         print_with_effect("GAME OVER")
         time.sleep(1)
+        print(f"Twój wynik to {ilosc_zwyciestw} zwycięstw!.")
+              
         print(f"Pokonani wrogowie to: {", ".join(pokonani_wrogowie)}!")
         break

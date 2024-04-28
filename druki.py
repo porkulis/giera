@@ -21,22 +21,24 @@ def loading_enemy(occurences = 3, speed = 0.03):
             clear()
 
 
-def print_with_effect(text = "Game Over"):
+def print_with_effect(text = "Game Over" , x = 10 , speed = 0.03):
     lista = list(text)
     print(lista)
     off = " "
     intro = ""
-    left = 10
+    left = x
     licznik = 0
-
     for n in lista:
-        for n in range(10):
+        for n in range(x):
             print(intro + off * left + lista[licznik])
             left -= 1
-            time.sleep(0.03)
+            time.sleep(speed)
             clear()
-        left = 10
+        left = x
         intro += lista[licznik]
         licznik += 1
-
     print(intro)
+
+# print_with_effect("Szła dzieweczka do laseczka, do zielonego.")
+
+#print_with_effect("Szła dzieweczka do laseczka, do zielonego." , 50, 0.01)
