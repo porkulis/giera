@@ -169,9 +169,9 @@ class Character:
         self.defence = defence
         self.speed = speed
     def przedstaw(self):
-        print(f"Na arenę wkracza: ")
+        print(f"\nNa arenę wkracza: ")
         #time.sleep(1)
-        print(f"\n{self.name_m.title()}! (HP: {self.hp}, DMG: {self.max_damage}, SPD: {self.speed})")
+        print(f"{self.name_m.title()}! (HP: {self.hp}, DMG: {self.max_damage}, SPD: {self.speed})")
 
 
 def tworz_przeciwnika(enemy_modifier=1):
@@ -182,8 +182,9 @@ def tworz_przeciwnika(enemy_modifier=1):
 print(f"\nLosowi przeciwnicy:")
 i = 1
 while i < 8:
-    przecio = random_enemy_name(i)
-    print(f"Level {i}: {przecio}")
+    przecio = tworz_przeciwnika(i)
+    przecio.przedstaw()
+    #print(f"Level {i}: {przecio}")
     i += 1
 
 

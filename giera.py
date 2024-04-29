@@ -32,7 +32,7 @@ print("Trudnisz się wojaczką.")
 time.sleep(1)
 print("Podczas swoich podróży natrafiasz na Arenę Walk znaną w Krainach jako: ")
 time.sleep(1)
-print_with_effect("Arena Śmierci IV")
+print("Arena Śmierci IV")
 time.sleep(1)
 input(f"\nCzy decydujesz się wkroczyć na Arenę Śmierci? (Wcisnij ENTER)")
 
@@ -44,7 +44,7 @@ pokonani_wrogowie = []
 while True:
     clear()
     name = "poziom" + str(x)
-    enemy = tworz_przeciwnika(z)
+    enemy = tworz_przeciwnika(x)
     loading_enemy(3 , 0.03)
     enemy.przedstaw()
     z += 2
@@ -56,7 +56,6 @@ while True:
     print(f"Starcie nr {x}: {player.name_m} (HP: {player.hp} DMG: {player.max_damage}) vs {enemy.name_m.title()} (HP: {enemy.hp} DMG: {enemy.max_damage})")
 
     x += 1
-    z += 1
 
     #ustawienie losowego ataku dla calej walki
     #attack_roll = roll(0,3)
