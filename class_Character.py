@@ -180,12 +180,12 @@ def tworz_przeciwnika(enemy_modifier=1):
     enemy = Character(enemy_name[0], enemy_name[1], enemy_name[2], base_hp + 2*roll(1,4), base_dmg + 2*roll(1,4), 1, base_speed + 2*roll(1,4))
     return enemy
 
-print(f"\nLosowi przeciwnicy:")
-i = 1
-while i < 8:
-    przecio = tworz_przeciwnika(i)
-    print(f"Level {i} - HP: {przecio.hp}, DMG: {przecio.max_damage}, SPD: {przecio.speed}    {przecio.name_m.title()}")
-    i += 1
+# print(f"\nLosowi przeciwnicy:")
+# i = 1
+# while i < 8:
+#     przecio = tworz_przeciwnika(i)
+#     print(f"Level {i} - HP: {przecio.hp}, DMG: {przecio.max_damage}, SPD: {przecio.speed}    {przecio.name_m.title()}")
+#     i += 1
 
 
 
