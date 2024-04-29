@@ -174,8 +174,8 @@ class Character:
 
 def tworz_przeciwnika(enemy_modifier=1):
     base_hp = roll(2,6) * enemy_modifier
-    base_dmg = roll(2,6) * enemy_modifier
-    base_speed = roll(1,3) * enemy_modifier
+    base_dmg = roll(2,4) * enemy_modifier
+    base_speed = int(roll(1,3) * (enemy_modifier/2))
     enemy_name = random_enemy_name(enemy_modifier)
     enemy = Character(enemy_name[0], enemy_name[1], enemy_name[2], base_hp + 2*roll(1,4), base_dmg + 2*roll(1,4), 1, base_speed + 2*roll(1,4))
     return enemy
@@ -184,8 +184,7 @@ print(f"\nLosowi przeciwnicy:")
 i = 1
 while i < 8:
     przecio = tworz_przeciwnika(i)
-    #print(f"Level {i}: {przecio}")
-    przecio.przedstaw()
+    print(f"Level {i}: {przecio.name_m.title()} (HP: {przecio.hp}, DMG: {przecio.max_damage}, SPD: {przecio.speed})")
     i += 1
 
 
